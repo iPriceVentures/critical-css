@@ -36,9 +36,11 @@ class LaravelHtmlFetcher implements HtmlFetcherInterface
         $response = $this->call($uri);
 
         if (!$response->isOk()) {
-            throw new HtmlFetchingException(
-                sprintf('Invalid response from URI [%s].', $uri)
-            );
+            $message = 'Invalid response from URI:' . PHP_EOL .
+                ' uri: ' . $uri . PHP_EOL .
+                ' status code: ' . $response->getStatusCode() . PHP_EOL .
+                ' content: ' . $response->getContent();
+            throw new HtmlFetchingException($message);
         }
 
         return $this->stripCss($response->getContent());

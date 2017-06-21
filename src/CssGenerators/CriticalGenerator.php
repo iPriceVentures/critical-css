@@ -122,12 +122,12 @@ class CriticalGenerator implements CssGeneratorInterface
         $process->run();
 
         if (!$process->isSuccessful()) {
-            $message = 'Error processing URI [%s]. This is probably caused by the Critical npm package. Checklist: ' . PHP_EOL .
+            $message = 'Error processing URI. This is probably caused by the Critical npm package. Checklist: ' . PHP_EOL .
                 '1) `critical_bin` is correct' . PHP_EOL .
-                '2) `css` paths are correct 3) run `npm`' . PHP_EOL .
+                '2) `css` paths are correct' . PHP_EOL .
                 '3) run `npm` install` again.' . PHP_EOL .
                 ' uri: ' . $uri . PHP_EOL .
-                ' Error output: ' . $process->getErrorOutput();
+                ' error output: ' . $process->getErrorOutput();
             throw new CssGeneratorException($message, $process->getExitCode());
         }
         return $this->storage->writeCss(
