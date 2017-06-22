@@ -1,11 +1,11 @@
 {
-  "name": "krisawzm/critical-css",
-  "description": "A Laravel package for generating and using inline critical-path CSS.",
+  "name": "ipricegroup/critical-css",
+  "description": "A Laravel package for generating and using inline critical-path CSS. Adapted from: https://github.com/kalfheim/critical-css",
   "keywords": ["css", "performance", "laravel"],
   "authors": [
     {
-      "name": "Kristoffer Alfheim",
-      "email": "kristoffer.alfh@gmail.com"
+      "name": "Rahul Sharma",
+      "email": "rd4704@gmail.com"
     }
   ],
   "license": "MIT",
